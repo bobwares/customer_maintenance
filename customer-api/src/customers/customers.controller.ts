@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.controller.ts
-// Version: 2.0.32
+// Version: 2.0.33
 // Author: Bobwares
-// Date: 2025-06-04 21:28:20 UTC
+// Date: 2025-06-04 21:55:00 UTC
 // Description: HTTP controller for customer routes.
 //
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
@@ -36,8 +36,8 @@ export class CustomersController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    this.customersService.remove(Number(id));
+  async remove(@Param('id') id: string) {
+    await this.customersService.remove(Number(id));
     return {};
   }
 }

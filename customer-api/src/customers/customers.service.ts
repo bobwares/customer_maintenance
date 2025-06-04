@@ -1,58 +1,52 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.service.ts
-// Version: 2.0.32
+// Version: 2.0.33
 // Author: Bobwares
-// Date: 2025-06-04 21:28:20 UTC
+// Date: 2025-06-04 21:55:00 UTC
 // Description: Business logic for managing customers.
 //
 import { Injectable, NotFoundException } from '@nestjs/common';
-
-export interface Customer {
-  id: number;
-  name: string;
-  email: string;
-}
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Customer } from './customer.entity';
 
 @Injectable()
 export class CustomersService {
-  private customers: Customer[] = [];
-  private nextId = 1;
+  constructor(
+    @InjectRepository(Customer)
+    private readonly repo: Repository<Customer>,
+  ) {}
 
-  create(data: { name: string; email: string }): Customer {
-    const customer = { id: this.nextId++, ...data };
-    this.customers.push(customer);
-    return customer;
+  async create(data: { name: string; email: string }): Promise<Customer> {
+    const customer = this.repo.create(data);
+    return this.repo.save(customer);
   }
 
-  findAll(): Customer[] {
-    return this.customers;
+  findAll(): Promise<Customer[]> {
+    return this.repo.find();
   }
 
-  findOne(id: number): Customer {
-    const customer = this.customers.find((c) => c.id === id);
+  async findOne(id: number): Promise<Customer> {
+    const customer = await this.repo.findOne({ where: { id } });
     if (!customer) {
       throw new NotFoundException(`Customer ${id} not found`);
     }
     return customer;
   }
 
-  update(id: number, data: { name?: string; email?: string }): Customer {
-    const customer = this.findOne(id);
+  async update(id: number, data: { name?: string; email?: string }): Promise<Customer> {
+    const customer = await this.findOne(id);
     if (data.name !== undefined) {
       customer.name = data.name;
     }
     if (data.email !== undefined) {
       customer.email = data.email;
     }
-    return customer;
+    return this.repo.save(customer);
   }
 
-  remove(id: number): void {
-    const index = this.customers.findIndex((c) => c.id === id);
-    if (index === -1) {
-      throw new NotFoundException(`Customer ${id} not found`);
-    }
-    this.customers.splice(index, 1);
+  async remove(id: number): Promise<void> {
+    await this.repo.delete(id);
   }
 }

@@ -1,4 +1,9 @@
 # Version History
+## 2.0.33 - 2025-06-04
+- Added PostgreSQL Dockerfile and .env configuration.
+- Integrated TypeORM persistence in customer-api.
+- Updated customer-app to use API for CRUD operations.
+- Bumped metadata version headers.
 ## 2.0.32 - 2025-06-04
 - Updated customer-api package.json with latest NestJS dependencies.
 - Bumped metadata version headers.

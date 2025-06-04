@@ -30,6 +30,17 @@ npm run start
 
 The API will be available at `http://localhost:3001`.
 
+### Database
+
+Build and run a PostgreSQL container using the provided Dockerfile:
+
+```bash
+docker build -f Dockerfile.postgres -t customer-db .
+docker run -d --name customer-db -p 5432:5432 customer-db
+```
+
+Ensure the environment variables in `customer-api/.env` match these settings.
+
 ### E2E Tests
 
 Sample `.http` files for testing the API can be found in `customer-api/e2e/`.
