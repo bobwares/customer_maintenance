@@ -1,7 +1,7 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/dto/update-customer.dto.ts
-// Version: 2.0.30
+// Version: 2.0.31
 // Author: Bobwares
 // Date: 2025-06-04 21:28:20 UTC
 // Description: DTO for updating a customer.
