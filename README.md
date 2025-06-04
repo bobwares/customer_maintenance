@@ -1,4 +1,17 @@
 # customer_maintenance
+
 Customer maintenance encompasses activities like adding new customers to a database, updating their information, and removing outdated records.
 
-This repository contains placeholder SVG icons in `customer-app/public` to avoid binary image files. These small text-based assets can be replaced with your own images or served from a remote URL if needed.
+This repository contains a small Next.js application in `customer-app/` using TypeScript.
+
+## Getting Started
+
+Install dependencies and run the development server:
+
+```bash
+cd customer-app
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000/customers` to access the customer maintenance page.
