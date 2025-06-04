@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import styles from './page.module.css';
 
 interface Customer {
   id: number;
@@ -55,54 +56,60 @@ export default function CustomersPage() {
   };
 
   return (
-    <div style={{ padding: '1rem' }}>
+    <div className={styles.container}>
       <h1>Customer Maintenance</h1>
-      <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
-        <div>
-          <label>
-            First:&nbsp;
-            <input value={first} onChange={e => setFirst(e.target.value)} required />
-          </label>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label>
+          First Name
+          <input value={first} onChange={e => setFirst(e.target.value)} required />
+        </label>
+        <label>
+          Last Name
+          <input value={last} onChange={e => setLast(e.target.value)} required />
+        </label>
+        <label>
+          Phone Number
+          <input value={phone} onChange={e => setPhone(e.target.value)} required />
+        </label>
+        <div className={styles.formButtons}>
+          <button type="submit" className={styles.button}>
+            {editingId === null ? 'Add' : 'Update'}
+          </button>
+          <button
+            type="button"
+            onClick={resetForm}
+            className={`${styles.button} ${styles.cancelButton}`}
+          >
+            {editingId === null ? 'Reset' : 'Cancel'}
+          </button>
         </div>
-        <div>
-          <label>
-            Last:&nbsp;
-            <input value={last} onChange={e => setLast(e.target.value)} required />
-          </label>
-        </div>
-        <div>
-          <label>
-            Phone:&nbsp;
-            <input value={phone} onChange={e => setPhone(e.target.value)} required />
-          </label>
-        </div>
-        <button type="submit">{editingId === null ? 'Add' : 'Update'}</button>
-        {editingId !== null && <button type="button" onClick={resetForm}>Cancel</button>}
       </form>
 
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-        <thead>
-          <tr>
-            <th style={{ borderBottom: '1px solid #ccc' }}>First</th>
-            <th style={{ borderBottom: '1px solid #ccc' }}>Last</th>
-            <th style={{ borderBottom: '1px solid #ccc' }}>Phone</th>
-            <th style={{ borderBottom: '1px solid #ccc' }}>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {customers.map(c => (
-            <tr key={c.id}>
-              <td>{c.first}</td>
-              <td>{c.last}</td>
-              <td>{c.phone}</td>
-              <td>
-                <button onClick={() => handleEdit(c.id)}>Edit</button>
-                <button onClick={() => handleDelete(c.id)}>Delete</button>
-              </td>
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>First</th>
+              <th>Last</th>
+              <th>Phone</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {customers.map(c => (
+              <tr key={c.id}>
+                <td>{c.first}</td>
+                <td>{c.last}</td>
+                <td>{c.phone}</td>
+                <td>
+                  <button onClick={() => handleEdit(c.id)}>Edit</button>
+                  <button onClick={() => handleDelete(c.id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
