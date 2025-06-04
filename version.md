@@ -1,4 +1,8 @@
 # Version History
+## 2.0.32 - 2025-06-04
+- Updated customer-api package.json with latest NestJS dependencies.
+- Bumped metadata version headers.
+
 
 ## 2.0.31 - 2025-06-04
 - Added .http e2e tests in `customer-api/e2e/`.
