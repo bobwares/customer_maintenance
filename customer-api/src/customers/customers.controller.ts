@@ -1,7 +1,7 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.controller.ts
-// Version: 2.0.31
+// Version: 2.0.32
 // Author: Bobwares
 // Date: 2025-06-04 21:28:20 UTC
 // Description: HTTP controller for customer routes.

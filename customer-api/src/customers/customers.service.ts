@@ -1,7 +1,7 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.service.ts
-// Version: 2.0.31
+// Version: 2.0.32
 // Author: Bobwares
 // Date: 2025-06-04 21:28:20 UTC
 // Description: Business logic for managing customers.
