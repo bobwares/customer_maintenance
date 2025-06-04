@@ -1,58 +1,78 @@
+// App: Customer CRUD Application
+// Package: customer-app
+// File: src/app/customers/page.tsx
+// Version: 2.0.33
+// Author: Bobwares
+// Date: 2025-06-04 21:55:00 UTC
+// Description: Customer maintenance page using customer-api backend.
+//
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
 interface Customer {
   id: number;
-  first: string;
-  last: string;
-  phone: string;
+  name: string;
+  email: string;
 }
+
+const API_URL = 'http://localhost:3001/customers';
 
 export default function CustomersPage() {
   const [customers, setCustomers] = useState<Customer[]>([]);
-  const [first, setFirst] = useState('');
-  const [last, setLast] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [editingId, setEditingId] = useState<number | null>(null);
 
+  const loadCustomers = async () => {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    setCustomers(data);
+  };
+
+  useEffect(() => {
+    loadCustomers();
+  }, []);
+
   const resetForm = () => {
-    setFirst('');
-    setLast('');
-    setPhone('');
+    setName('');
+    setEmail('');
     setEditingId(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (editingId === null) {
-      const newCustomer: Customer = {
-        id: Date.now(),
-        first,
-        last,
-        phone,
-      };
-      setCustomers([...customers, newCustomer]);
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email }),
+      });
     } else {
-      setCustomers(customers.map(c => c.id === editingId ? { ...c, first, last, phone } : c));
+      await fetch(`${API_URL}/${editingId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email }),
+      });
     }
     resetForm();
+    loadCustomers();
   };
 
   const handleEdit = (id: number) => {
-    const customer = customers.find(c => c.id === id);
+    const customer = customers.find((c) => c.id === id);
     if (!customer) return;
-    setFirst(customer.first);
-    setLast(customer.last);
-    setPhone(customer.phone);
+    setName(customer.name);
+    setEmail(customer.email);
     setEditingId(id);
   };
 
-  const handleDelete = (id: number) => {
-    setCustomers(customers.filter(c => c.id !== id));
+  const handleDelete = async (id: number) => {
+    await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
     if (editingId === id) {
       resetForm();
     }
+    loadCustomers();
   };
 
   return (
@@ -60,16 +80,12 @@ export default function CustomersPage() {
       <h1>Customer Maintenance</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label>
-          First Name
-          <input value={first} onChange={e => setFirst(e.target.value)} required />
+          Name
+          <input value={name} onChange={(e) => setName(e.target.value)} required />
         </label>
         <label>
-          Last Name
-          <input value={last} onChange={e => setLast(e.target.value)} required />
-        </label>
-        <label>
-          Phone Number
-          <input value={phone} onChange={e => setPhone(e.target.value)} required />
+          Email
+          <input value={email} onChange={(e) => setEmail(e.target.value)} required />
         </label>
         <div className={styles.formButtons}>
           <button type="submit" className={styles.button}>
@@ -89,18 +105,16 @@ export default function CustomersPage() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>First</th>
-              <th>Last</th>
-              <th>Phone</th>
+              <th>Name</th>
+              <th>Email</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {customers.map(c => (
+            {customers.map((c) => (
               <tr key={c.id}>
-                <td>{c.first}</td>
-                <td>{c.last}</td>
-                <td>{c.phone}</td>
+                <td>{c.name}</td>
+                <td>{c.email}</td>
                 <td>
                   <button onClick={() => handleEdit(c.id)}>Edit</button>
                   <button onClick={() => handleDelete(c.id)}>Delete</button>

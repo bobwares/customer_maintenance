@@ -1,0 +1,13 @@
+# App: Customer CRUD Application
+# Package: postgres
+# File: Dockerfile.postgres
+# Version: 2.0.33
+# Author: Bobwares
+# Date: 2025-06-04 21:55:00 UTC
+# Description: Dockerfile to run PostgreSQL for development.
+#
+FROM postgres:15
+ENV POSTGRES_DB=customerdb
+ENV POSTGRES_USER=customer
+ENV POSTGRES_PASSWORD=password
+EXPOSE 5432

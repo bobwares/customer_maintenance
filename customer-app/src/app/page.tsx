@@ -1,3 +1,11 @@
+// App: Customer CRUD Application
+// Package: customer-app
+// File: src/app/page.tsx
+// Version: 2.0.33
+// Author: Bobwares
+// Date: 2025-06-04 21:55:00 UTC
+// Description: Home page of the Next.js application.
+//
 import styles from "./page.module.css";
 
 export default function Home() {
