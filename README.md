@@ -29,3 +29,9 @@ npm run start
 ```
 
 The API will be available at `http://localhost:3001`.
+
+### E2E Tests
+
+Sample `.http` files for testing the API can be found in `customer-api/e2e/`.
+These files can be executed using an HTTP client extension such as the VS Code
+REST Client.

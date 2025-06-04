@@ -1,7 +1,7 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/app.module.ts
-// Version: 2.0.30
+// Version: 2.0.31
 // Author: Bobwares
 // Date: 2025-06-04 21:28:20 UTC
 // Description: Root application module.
