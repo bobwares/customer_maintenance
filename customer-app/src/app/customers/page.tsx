@@ -1,14 +1,22 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.41
+// Version: 2.0.42
 // Author: Bobwares
-// Date: 2025-06-05 06:37:28 UTC
+// Date: 2025-06-05 06:59:52 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
+
+const STATES = [
+  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA',
+  'HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
+  'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ',
+  'NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
+  'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY',
+];
 
 interface Address {
   street: string;
@@ -115,6 +123,7 @@ export default function CustomersPage() {
               value={form.first}
               onChange={(e) => setForm({ ...form, first: e.target.value })}
               required
+              maxLength={30}
             />
           </label>
           <label>
@@ -123,6 +132,7 @@ export default function CustomersPage() {
               value={form.last}
               onChange={(e) => setForm({ ...form, last: e.target.value })}
               required
+              maxLength={30}
             />
           </label>
           <label>
@@ -132,6 +142,7 @@ export default function CustomersPage() {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
+              maxLength={30}
             />
           </label>
           <label>
@@ -152,6 +163,7 @@ export default function CustomersPage() {
               value={form.address?.street ?? ''}
               onChange={(e) => setAddress('street', e.target.value)}
               required
+              maxLength={30}
             />
           </label>
           <label>
@@ -160,16 +172,23 @@ export default function CustomersPage() {
               value={form.address?.city ?? ''}
               onChange={(e) => setAddress('city', e.target.value)}
               required
+              maxLength={30}
             />
           </label>
           <label>
             State
-            <input
+            <select
               value={form.address?.state ?? ''}
               onChange={(e) => setAddress('state', e.target.value)}
               required
-              maxLength={2}
-            />
+            >
+              <option value="">Select...</option>
+              {STATES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Zipcode
@@ -177,6 +196,8 @@ export default function CustomersPage() {
               value={form.address?.zipcode ?? ''}
               onChange={(e) => setAddress('zipcode', e.target.value)}
               required
+              maxLength={5}
+              className={styles.zipInput}
             />
           </label>
         </div>
