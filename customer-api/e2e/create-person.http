@@ -1,0 +1,22 @@
+# App: Customer CRUD Application
+# Package: customer-api
+# File: e2e/create-person.http
+# Version: 2.0.34
+# Author: Bobwares
+# Date: 2025-06-05 00:14:14 UTC
+# Description: E2E test for creating a person.
+#
+POST http://localhost:3001/persons
+Content-Type: application/json
+
+{
+  "first": "John",
+  "last": "Doe",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "Metropolis",
+    "state": "NY",
+    "zipcode": "12345"
+  }
+}

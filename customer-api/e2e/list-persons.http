@@ -1,9 +1,9 @@
 # App: Customer CRUD Application
 # Package: customer-api
-# File: e2e/list-customers.http
+# File: e2e/list-persons.http
 # Version: 2.0.34
 # Author: Bobwares
 # Date: 2025-06-05 00:14:14 UTC
-# Description: E2E test for retrieving all customers.
+# Description: E2E test for retrieving all persons.
 #
-GET http://localhost:3001/customers
+GET http://localhost:3001/persons

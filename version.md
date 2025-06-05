@@ -1,4 +1,7 @@
 # Version History
+## 2.0.34 - 2025-06-05
+- Added Person module and frontend page to manage people based on new JSON schema.
+- Bumped metadata version headers.
 ## 2.0.33 - 2025-06-04
 - Added PostgreSQL Dockerfile and .env configuration.
 - Integrated TypeORM persistence in customer-api.

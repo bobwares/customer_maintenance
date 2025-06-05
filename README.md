@@ -17,6 +17,7 @@ npm run dev
 ```
 
 Open `http://localhost:3000/customers` to access the customer maintenance page.
+Open `http://localhost:3000/persons` to manage the person list defined by the JSON schema.
 
 ### Backend
 
