@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.service.ts
-// Version: 2.0.35
+// Version: 2.0.36
 // Author: Bobwares
-// Date: 2025-06-05 01:23:52 UTC
+// Date: 2025-06-05 01:48:26 UTC
 // Description: Business logic for managing customers.
 //
 import { Injectable, NotFoundException } from '@nestjs/common';
@@ -22,12 +22,14 @@ export class CustomersService {
     first: string;
     last: string;
     age: number;
+    email: string;
     address: { street: string; city: string; state: string; zipcode: string };
   }): Promise<Customer> {
     const customer = this.repo.create({
       first: data.first,
       last: data.last,
       age: data.age,
+      email: data.email,
       street: data.address.street,
       city: data.address.city,
       state: data.address.state,
@@ -54,6 +56,7 @@ export class CustomersService {
       first?: string;
       last?: string;
       age?: number;
+      email?: string;
       address?: {
         street?: string;
         city?: string;
@@ -71,6 +74,9 @@ export class CustomersService {
     }
     if (data.age !== undefined) {
       customer.age = data.age;
+    }
+    if (data.email !== undefined) {
+      customer.email = data.email;
     }
     if (data.address) {
       if (data.address.street !== undefined) {

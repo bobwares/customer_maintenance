@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/main.ts
-// Version: 2.0.34
+// Version: 2.0.36
 // Author: Bobwares
-// Date: 2025-06-05 00:14:14 UTC
+// Date: 2025-06-05 01:48:49 UTC
 // Description: Bootstraps the NestJS application.
 //
 import { NestFactory } from '@nestjs/core';

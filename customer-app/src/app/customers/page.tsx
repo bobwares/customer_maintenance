@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.35
+// Version: 2.0.36
 // Author: Bobwares
-// Date: 2025-06-05 01:26:26 UTC
+// Date: 2025-06-05 01:49:58 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
@@ -22,6 +22,7 @@ interface Customer {
   first: string;
   last: string;
   age: number;
+  email: string;
   address: Address;
 }
 
@@ -34,6 +35,7 @@ export default function CustomersPage() {
     first: '',
     last: '',
     age: 0,
+    email: '',
     address: { street: '', city: '', state: '', zipcode: '' },
   });
   const [editingId, setEditingId] = useState<number | null>(null);
@@ -122,6 +124,15 @@ export default function CustomersPage() {
           />
         </label>
         <label>
+          Email
+          <input
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            required
+          />
+        </label>
+        <label>
           Age
           <input
             type="number"
@@ -184,6 +195,7 @@ export default function CustomersPage() {
             <tr>
               <th>First</th>
               <th>Last</th>
+              <th>Email</th>
               <th>Age</th>
               <th>Street</th>
               <th>City</th>
@@ -197,6 +209,7 @@ export default function CustomersPage() {
               <tr key={c.id}>
                 <td>{c.first}</td>
                 <td>{c.last}</td>
+                <td>{c.email}</td>
                 <td>{c.age}</td>
                 <td>{c.address.street}</td>
                 <td>{c.address.city}</td>

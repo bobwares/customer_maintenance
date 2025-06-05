@@ -1,4 +1,8 @@
 # Version History
+## 2.0.36 - 2025-06-05
+- Added email and timestamp fields to customer schema and database entity.
+- Updated DTOs, service, frontend, and test files.
+- Bumped metadata version headers.
 ## 2.0.35 - 2025-06-05
 - Removed Person module and schema; updated customer schema to match customer_schema.json.
 - Bumped metadata version headers.

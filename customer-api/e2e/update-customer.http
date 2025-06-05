@@ -1,9 +1,9 @@
 # App: Customer CRUD Application
 # Package: customer-api
 # File: e2e/update-customer.http
-# Version: 2.0.35
+# Version: 2.0.36
 # Author: Bobwares
-# Date: 2025-06-05 01:24:29 UTC
+# Date: 2025-06-05 01:49:04 UTC
 # Description: E2E test for updating a customer.
 #
 PATCH http://localhost:3001/customers/1
@@ -11,6 +11,7 @@ Content-Type: application/json
 
 {
   "age": 31,
+  "email": "updated@example.com",
   "address": {
     "city": "New City"
   }

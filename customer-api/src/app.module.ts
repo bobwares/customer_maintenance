@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/app.module.ts
-// Version: 2.0.35
+// Version: 2.0.36
 // Author: Bobwares
-// Date: 2025-06-05 01:22:19 UTC
+// Date: 2025-06-05 01:48:44 UTC
 // Description: Root application module.
 //
 import { Module } from '@nestjs/common';

@@ -4,13 +4,17 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["first", "last", "age", "address"],
+    "required": ["first", "last", "age", "email", "address"],
     "properties": {
       "first": {
         "type": "string"
       },
       "last": {
         "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
       },
       "age": {
         "type": "integer",
@@ -20,25 +24,16 @@
         "type": "object",
         "required": ["street", "city", "state", "zipcode"],
         "properties": {
-          "street": {
-            "type": "string"
-          },
-          "city": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string",
-            "minLength": 2,
-            "maxLength": 2
-          },
-          "zipcode": {
-            "type": "string",
-            "pattern": "^\\d{5}$"
-          }
+          "street": { "type": "string" },
+          "city": { "type": "string" },
+          "state": { "type": "string", "minLength": 2, "maxLength": 2 },
+          "zipcode": { "type": "string", "pattern": "^\\d{5}$" }
         },
         "additionalProperties": false
-      }
+      },
+      "createdAt": { "type": "string", "format": "date-time" },
+      "updatedAt": { "type": "string", "format": "date-time" }
     },
     "additionalProperties": false
   }
-}
+ }
