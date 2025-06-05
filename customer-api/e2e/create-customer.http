@@ -1,15 +1,22 @@
 # App: Customer CRUD Application
 # Package: customer-api
 # File: e2e/create-customer.http
-# Version: 2.0.34
+# Version: 2.0.35
 # Author: Bobwares
-# Date: 2025-06-05 00:14:14 UTC
+# Date: 2025-06-05 01:24:16 UTC
 # Description: E2E test for creating a customer.
 #
 POST http://localhost:3001/customers
 Content-Type: application/json
 
 {
-  "name": "Alice",
-  "email": "alice@example.com"
+  "first": "Alice",
+  "last": "Smith",
+  "age": 30,
+  "address": {
+    "street": "123 Main",
+    "city": "Anytown",
+    "state": "CA",
+    "zipcode": "12345"
+  }
 }

@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customer.entity.ts
-// Version: 2.0.34
+// Version: 2.0.35
 // Author: Bobwares
-// Date: 2025-06-05 00:14:14 UTC
+// Date: 2025-06-05 01:22:37 UTC
 // Description: TypeORM entity representing a customer.
 //
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
@@ -14,8 +14,23 @@ export class Customer {
   id!: number;
 
   @Column()
-  name!: string;
+  first!: string;
 
   @Column()
-  email!: string;
+  last!: string;
+
+  @Column()
+  age!: number;
+
+  @Column()
+  street!: string;
+
+  @Column()
+  city!: string;
+
+  @Column()
+  state!: string;
+
+  @Column()
+  zipcode!: string;
 }
