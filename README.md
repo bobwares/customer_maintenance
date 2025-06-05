@@ -18,6 +18,21 @@ npm run dev
 
 Open `http://localhost:3000/customers` to access the customer maintenance page.
 
+### Linting and Testing
+
+Run `npm install` in each package before executing lint or test commands:
+
+```bash
+cd customer-app
+npm install
+npm run lint
+
+cd ../customer-api
+npm install
+npm run lint
+npm test
+```
+
 ### Backend
 
 Start the API server:

@@ -1,4 +1,11 @@
 # Version History
+## 2.0.45 - 2025-06-05
+- Documented dependency installation, lint, and test commands in README.
+
+## 2.0.44 - 2025-06-05
+- Added sortable columns and scrollable table on customer page.
+- Replaced separate first and last name columns with combined "Last, First".
+
 ## 2.0.43 - 2025-06-05
 - Display full state names in dropdown and table.
 - Allow 10-character zip codes and place state and zip on one row.
