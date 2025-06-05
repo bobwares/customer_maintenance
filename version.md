@@ -1,4 +1,9 @@
 # Version History
+## 2.0.46 - 2025-06-05
+- Split customer table and form into separate pages.
+- Added navigation buttons and cancel functionality.
+- Spaced action buttons in table.
+
 ## 2.0.45 - 2025-06-05
 - Documented dependency installation, lint, and test commands in README.
 

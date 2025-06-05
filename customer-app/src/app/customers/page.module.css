@@ -2,9 +2,9 @@
 # App: Customer CRUD Application
 # Package: customer-app
 # File: src/app/customers/page.module.css
-# Version: 2.0.45
+# Version: 2.0.46
 # Author: Bobwares
-# Date: 2025-06-05 07:21:35 UTC
+# Date: 2025-06-05 07:30:00 UTC
 # Description: CSS styles for the customer maintenance page.
 #
 */
@@ -86,6 +86,22 @@
   background-color: #e0e0e0;
 }
 
+.tableHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newButton {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.newButton:hover {
+  background-color: #162d6a;
+}
+
 .tableContainer {
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -107,4 +123,8 @@
 
 .table th {
   cursor: pointer;
+}
+
+.actionButton {
+  margin-right: 0.5rem;
 }
