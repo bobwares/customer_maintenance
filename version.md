@@ -1,4 +1,9 @@
 # Version History
+## 2.0.42 - 2025-06-05
+- Added dropdown list of US states on customer form.
+- Limited text input fields to 30 characters and zipcode to 5.
+- Styled zipcode field width.
+
 ## 2.0.41 - 2025-06-05
 - Updated customer page layout with two-column form and light blue background.
 - Bumped metadata version headers across project.
