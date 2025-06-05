@@ -1,4 +1,8 @@
 # Version History
+## 2.0.47 - 2025-06-05
+- Renamed first column header to "Name".
+- Made table header sticky when scrolling.
+
 ## 2.0.46 - 2025-06-05
 - Split customer table and form into separate pages.
 - Added navigation buttons and cancel functionality.

@@ -2,9 +2,9 @@
 # App: Customer CRUD Application
 # Package: customer-app
 # File: src/app/customers/page.module.css
-# Version: 2.0.46
+# Version: 2.0.47
 # Author: Bobwares
-# Date: 2025-06-05 07:30:00 UTC
+# Date: 2025-06-05 07:44:19 UTC
 # Description: CSS styles for the customer maintenance page.
 #
 */
@@ -123,6 +123,10 @@
 
 .table th {
   cursor: pointer;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1;
 }
 
 .actionButton {

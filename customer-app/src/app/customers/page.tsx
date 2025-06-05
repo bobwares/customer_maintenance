@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.46
+// Version: 2.0.47
 // Author: Bobwares
-// Date: 2025-06-05 07:30:00 UTC
+// Date: 2025-06-05 07:44:19 UTC
 // Description: Customer table page with navigation to form page.
 //
 "use client";
@@ -111,7 +111,7 @@ export default function CustomersPage() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th onClick={() => handleSort('last')}>Last, First</th>
+              <th onClick={() => handleSort('last')}>Name</th>
               <th onClick={() => handleSort('email')}>Email</th>
               <th onClick={() => handleSort('age')}>Age</th>
               <th onClick={() => handleSort('street')}>Street</th>
