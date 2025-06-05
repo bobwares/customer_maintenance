@@ -1,9 +1,0 @@
-# App: Customer CRUD Application
-# Package: customer-api
-# File: e2e/get-person.http
-# Version: 2.0.34
-# Author: Bobwares
-# Date: 2025-06-05 00:14:14 UTC
-# Description: E2E test for retrieving a single person.
-#
-GET http://localhost:3001/persons/1

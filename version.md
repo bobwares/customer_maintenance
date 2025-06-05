@@ -1,4 +1,7 @@
 # Version History
+## 2.0.35 - 2025-06-05
+- Removed Person module and schema; updated customer schema to match customer_schema.json.
+- Bumped metadata version headers.
 ## 2.0.34 - 2025-06-05
 - Added Person module and frontend page to manage people based on new JSON schema.
 - Bumped metadata version headers.
