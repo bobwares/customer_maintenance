@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/dto/create-customer.dto.ts
-// Version: 2.0.37
+// Version: 2.0.40
 // Author: Bobwares
-// Date: 2025-06-05 02:43:30 UTC
+// Date: 2025-06-05 03:31:23 UTC
 // Description: DTO for creating a customer.
 //
 import {

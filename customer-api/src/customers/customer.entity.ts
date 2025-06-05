@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customer.entity.ts
-// Version: 2.0.37
+// Version: 2.0.40
 // Author: Bobwares
-// Date: 2025-06-05 02:43:30 UTC
+// Date: 2025-06-05 03:31:23 UTC
 // Description: TypeORM entity representing a customer with email and timestamps.
 //
 import {
@@ -12,7 +12,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
+import { Address } from './address.entity';
 
 @Entity()
 export class Customer {
@@ -31,17 +34,9 @@ export class Customer {
   @Column()
   email!: string;
 
-  @Column()
-  street!: string;
-
-  @Column()
-  city!: string;
-
-  @Column()
-  state!: string;
-
-  @Column()
-  zipcode!: string;
+  @OneToOne(() => Address, { cascade: true, eager: true })
+  @JoinColumn()
+  address!: Address;
 
   @CreateDateColumn()
   createdAt!: Date;

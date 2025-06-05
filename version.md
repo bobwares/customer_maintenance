@@ -1,4 +1,16 @@
 # Version History
+## 2.0.40 - 2025-06-05
+- Added SQL schema creation script for address and customer tables.
+- Updated metadata version headers across all source files.
+- Documented schema script in README.
+
+## 2.0.39 - 2025-06-05
+- Separated address into its own database table with one-to-one relation.
+- Updated NestJS entities, service, and module configuration.
+- Enhanced frontend page to safely handle optional address fields.
+- Updated SQL test data for new schema.
+- Bumped metadata version headers.
+
 ## 2.0.38 - 2025-06-05
 - Added SQL file with insert statements for 10 customer records.
 - Bumped metadata version headers.

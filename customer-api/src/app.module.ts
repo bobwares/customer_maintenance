@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/app.module.ts
-// Version: 2.0.37
+// Version: 2.0.40
 // Author: Bobwares
-// Date: 2025-06-05 02:43:30 UTC
+// Date: 2025-06-05 03:31:23 UTC
 // Description: Root application module.
 //
 import { Module } from '@nestjs/common';
@@ -11,6 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { CustomersModule } from './customers/customers.module';
 import { Customer } from './customers/customer.entity';
+import { Address } from './customers/address.entity';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { Customer } from './customers/customer.entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
-      entities: [Customer],
+      entities: [Customer, Address],
       synchronize: true,
     }),
     CustomersModule,

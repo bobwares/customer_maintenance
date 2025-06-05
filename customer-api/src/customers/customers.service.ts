@@ -1,15 +1,16 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.service.ts
-// Version: 2.0.37
+// Version: 2.0.40
 // Author: Bobwares
-// Date: 2025-06-05 02:43:30 UTC
+// Date: 2025-06-05 03:31:23 UTC
 // Description: Business logic for managing customers.
 //
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Customer } from './customer.entity';
+import { Address } from './address.entity';
 
 @Injectable()
 export class CustomersService {
@@ -30,10 +31,12 @@ export class CustomersService {
       last: data.last,
       age: data.age,
       email: data.email,
-      street: data.address.street,
-      city: data.address.city,
-      state: data.address.state,
-      zipcode: data.address.zipcode,
+      address: {
+        street: data.address.street,
+        city: data.address.city,
+        state: data.address.state,
+        zipcode: data.address.zipcode,
+      } as Address,
     });
     return this.repo.save(customer);
   }
@@ -79,17 +82,20 @@ export class CustomersService {
       customer.email = data.email;
     }
     if (data.address) {
+      if (!customer.address) {
+        customer.address = {} as Address;
+      }
       if (data.address.street !== undefined) {
-        customer.street = data.address.street;
+        customer.address.street = data.address.street;
       }
       if (data.address.city !== undefined) {
-        customer.city = data.address.city;
+        customer.address.city = data.address.city;
       }
       if (data.address.state !== undefined) {
-        customer.state = data.address.state;
+        customer.address.state = data.address.state;
       }
       if (data.address.zipcode !== undefined) {
-        customer.zipcode = data.address.zipcode;
+        customer.address.zipcode = data.address.zipcode;
       }
     }
     return this.repo.save(customer);
