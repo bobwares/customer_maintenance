@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customer.entity.ts
-// Version: 2.0.36
+// Version: 2.0.37
 // Author: Bobwares
-// Date: 2025-06-05 01:47:43 UTC
+// Date: 2025-06-05 02:43:30 UTC
 // Description: TypeORM entity representing a customer with email and timestamps.
 //
 import {

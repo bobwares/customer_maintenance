@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.36
+// Version: 2.0.37
 // Author: Bobwares
-// Date: 2025-06-05 01:49:58 UTC
+// Date: 2025-06-05 02:43:30 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
