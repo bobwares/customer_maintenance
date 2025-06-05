@@ -1,4 +1,8 @@
 # Version History
+## 2.0.38 - 2025-06-05
+- Added SQL file with insert statements for 10 customer records.
+- Bumped metadata version headers.
+
 ## 2.0.37 - 2025-06-05
 - Extracted AddressDto into its own file and updated imports.
 - Bumped metadata version headers.
