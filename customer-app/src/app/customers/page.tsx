@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.42
+// Version: 2.0.43
 // Author: Bobwares
-// Date: 2025-06-05 06:59:52 UTC
+// Date: 2025-06-05 07:09:10 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
@@ -11,11 +11,56 @@ import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
 const STATES = [
-  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA',
-  'HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
-  'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ',
-  'NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
-  'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY',
+  'Alabama',
+  'Alaska',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'Florida',
+  'Georgia',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Pennsylvania',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
 ];
 
 interface Address {
@@ -175,31 +220,34 @@ export default function CustomersPage() {
               maxLength={30}
             />
           </label>
-          <label>
-            State
-            <select
-              value={form.address?.state ?? ''}
-              onChange={(e) => setAddress('state', e.target.value)}
-              required
-            >
-              <option value="">Select...</option>
-              {STATES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Zipcode
-            <input
-              value={form.address?.zipcode ?? ''}
-              onChange={(e) => setAddress('zipcode', e.target.value)}
-              required
-              maxLength={5}
-              className={styles.zipInput}
-            />
-          </label>
+          <div className={styles.row}>
+            <label>
+              State
+              <select
+                className={styles.stateSelect}
+                value={form.address?.state ?? ''}
+                onChange={(e) => setAddress('state', e.target.value)}
+                required
+              >
+                <option value="">Select...</option>
+                {STATES.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Zipcode
+              <input
+                value={form.address?.zipcode ?? ''}
+                onChange={(e) => setAddress('zipcode', e.target.value)}
+                required
+                maxLength={10}
+                className={styles.zipInput}
+              />
+            </label>
+          </div>
         </div>
         <div className={styles.formButtons}>
           <button type="submit" className={styles.button}>

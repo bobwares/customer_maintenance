@@ -2,9 +2,9 @@
 # App: Customer CRUD Application
 # Package: customer-app
 # File: src/app/customers/page.module.css
-# Version: 2.0.42
+# Version: 2.0.43
 # Author: Bobwares
-# Date: 2025-06-05 06:59:52 UTC
+# Date: 2025-06-05 07:09:36 UTC
 # Description: CSS styles for the customer maintenance page.
 #
 */
@@ -41,7 +41,16 @@
 }
 
 .zipInput {
-  width: 6ch;
+  width: 12ch;
+}
+
+.stateSelect {
+  width: 16ch;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
 }
 
 .col {
