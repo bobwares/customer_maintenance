@@ -1,4 +1,9 @@
 # Version History
+## 2.0.41 - 2025-06-05
+- Updated customer page layout with two-column form and light blue background.
+- Bumped metadata version headers across project.
+
+
 ## 2.0.40 - 2025-06-05
 - Added SQL schema creation script for address and customer tables.
 - Updated metadata version headers across all source files.
