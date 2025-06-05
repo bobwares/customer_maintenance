@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.37
+// Version: 2.0.40
 // Author: Bobwares
-// Date: 2025-06-05 02:43:30 UTC
+// Date: 2025-06-05 03:31:23 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
@@ -23,7 +23,7 @@ interface Customer {
   last: string;
   age: number;
   email: string;
-  address: Address;
+  address?: Address;
 }
 
 const API_URL = 'http://localhost:3001/customers';
@@ -56,6 +56,7 @@ export default function CustomersPage() {
       first: '',
       last: '',
       age: 0,
+      email: '',
       address: { street: '', city: '', state: '', zipcode: '' },
     });
     setEditingId(null);
@@ -84,7 +85,7 @@ export default function CustomersPage() {
   const handleEdit = (id: number) => {
     const customer = customers.find((c) => c.id === id);
     if (!customer) return;
-    setForm(customer);
+    setForm({ ...customer, address: customer.address ?? { street: '', city: '', state: '', zipcode: '' } });
     setEditingId(id);
   };
 
@@ -99,7 +100,7 @@ export default function CustomersPage() {
   const setAddress = (key: keyof Address, value: string) => {
     setForm((prev) => ({
       ...prev,
-      address: { ...prev.address, [key]: value },
+      address: { ...(prev.address || { street: '', city: '', state: '', zipcode: '' }), [key]: value },
     }));
   };
 
@@ -145,7 +146,7 @@ export default function CustomersPage() {
         <label>
           Street
           <input
-            value={form.address.street}
+            value={form.address?.street ?? ''}
             onChange={(e) => setAddress('street', e.target.value)}
             required
           />
@@ -153,7 +154,7 @@ export default function CustomersPage() {
         <label>
           City
           <input
-            value={form.address.city}
+            value={form.address?.city ?? ''}
             onChange={(e) => setAddress('city', e.target.value)}
             required
           />
@@ -161,7 +162,7 @@ export default function CustomersPage() {
         <label>
           State
           <input
-            value={form.address.state}
+            value={form.address?.state ?? ''}
             onChange={(e) => setAddress('state', e.target.value)}
             required
             maxLength={2}
@@ -170,7 +171,7 @@ export default function CustomersPage() {
         <label>
           Zipcode
           <input
-            value={form.address.zipcode}
+            value={form.address?.zipcode ?? ''}
             onChange={(e) => setAddress('zipcode', e.target.value)}
             required
           />
@@ -211,10 +212,10 @@ export default function CustomersPage() {
                 <td>{c.last}</td>
                 <td>{c.email}</td>
                 <td>{c.age}</td>
-                <td>{c.address.street}</td>
-                <td>{c.address.city}</td>
-                <td>{c.address.state}</td>
-                <td>{c.address.zipcode}</td>
+                <td>{c.address?.street}</td>
+                <td>{c.address?.city}</td>
+                <td>{c.address?.state}</td>
+                <td>{c.address?.zipcode}</td>
                 <td>
                   <button onClick={() => handleEdit(c.id)}>Edit</button>
                   <button onClick={() => handleDelete(c.id)}>Delete</button>

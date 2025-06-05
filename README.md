@@ -32,6 +32,13 @@ The API will be available at `http://localhost:3001`.
 
 ### Database
 
+After starting PostgreSQL, run `schema/create_schema.sql` to initialize the tables:
+
+```bash
+psql -h localhost -U postgres -f schema/create_schema.sql
+```
+
+
 Build and run a PostgreSQL container using the provided Dockerfile:
 
 ```bash
