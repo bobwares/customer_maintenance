@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.47
+// Version: 2.0.48
 // Author: Bobwares
-// Date: 2025-06-05 07:44:19 UTC
+// Date: 2025-06-05 07:53:58 UTC
 // Description: Customer table page with navigation to form page.
 //
 "use client";

@@ -2,9 +2,9 @@
 # App: Customer CRUD Application
 # Package: customer-app
 # File: src/app/customers/page.module.css
-# Version: 2.0.47
+# Version: 2.0.48
 # Author: Bobwares
-# Date: 2025-06-05 07:44:19 UTC
+# Date: 2025-06-05 07:53:58 UTC
 # Description: CSS styles for the customer maintenance page.
 #
 */
@@ -106,7 +106,7 @@
   background-color: #ffffff;
   border: 1px solid #ccc;
   padding: 1rem;
-  max-height: 400px;
+  flex: 1;
   overflow-y: auto;
 }
 
@@ -126,7 +126,7 @@
   position: sticky;
   top: 0;
   background-color: #ffffff;
-  z-index: 1;
+  z-index: 2;
 }
 
 .actionButton {
