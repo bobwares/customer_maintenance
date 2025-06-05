@@ -1,9 +1,9 @@
 # App: Customer CRUD Application
 # Package: customer-api
 # File: e2e/delete-customer.http
-# Version: 2.0.33
+# Version: 2.0.34
 # Author: Bobwares
-# Date: 2025-06-04 21:50:39 UTC
+# Date: 2025-06-05 00:14:14 UTC
 # Description: E2E test for deleting a customer.
 #
 DELETE http://localhost:3001/customers/1
