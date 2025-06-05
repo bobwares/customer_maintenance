@@ -1,9 +1,9 @@
 -- App: Customer CRUD Application
 -- Package: schema
 -- File: schema/create_schema.sql
--- Version: 2.0.40
+-- Version: 2.0.41
 -- Author: Bobwares
--- Date: 2025-06-05 03:31:23 UTC
+-- Date: 2025-06-05 06:37:28 UTC
 -- Description: SQL statements to create address and customer tables.
 --
 CREATE TABLE IF NOT EXISTS address (

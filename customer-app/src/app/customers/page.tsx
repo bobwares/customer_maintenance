@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.40
+// Version: 2.0.41
 // Author: Bobwares
-// Date: 2025-06-05 03:31:23 UTC
+// Date: 2025-06-05 06:37:28 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
@@ -108,74 +108,78 @@ export default function CustomersPage() {
     <div className={styles.container}>
       <h1>Customer Maintenance</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <label>
-          First
-          <input
-            value={form.first}
-            onChange={(e) => setForm({ ...form, first: e.target.value })}
-            required
-          />
-        </label>
-        <label>
-          Last
-          <input
-            value={form.last}
-            onChange={(e) => setForm({ ...form, last: e.target.value })}
-            required
-          />
-        </label>
-        <label>
-          Email
-          <input
-            type="email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            required
-          />
-        </label>
-        <label>
-          Age
-          <input
-            type="number"
-            value={form.age}
-            onChange={(e) => setForm({ ...form, age: Number(e.target.value) })}
-            min={0}
-            required
-          />
-        </label>
-        <label>
-          Street
-          <input
-            value={form.address?.street ?? ''}
-            onChange={(e) => setAddress('street', e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          City
-          <input
-            value={form.address?.city ?? ''}
-            onChange={(e) => setAddress('city', e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          State
-          <input
-            value={form.address?.state ?? ''}
-            onChange={(e) => setAddress('state', e.target.value)}
-            required
-            maxLength={2}
-          />
-        </label>
-        <label>
-          Zipcode
-          <input
-            value={form.address?.zipcode ?? ''}
-            onChange={(e) => setAddress('zipcode', e.target.value)}
-            required
-          />
-        </label>
+        <div className={styles.col}>
+          <label>
+            First
+            <input
+              value={form.first}
+              onChange={(e) => setForm({ ...form, first: e.target.value })}
+              required
+            />
+          </label>
+          <label>
+            Last
+            <input
+              value={form.last}
+              onChange={(e) => setForm({ ...form, last: e.target.value })}
+              required
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
+            />
+          </label>
+          <label>
+            Age
+            <input
+              type="number"
+              value={form.age}
+              onChange={(e) => setForm({ ...form, age: Number(e.target.value) })}
+              min={0}
+              required
+            />
+          </label>
+        </div>
+        <div className={styles.col}>
+          <label>
+            Street
+            <input
+              value={form.address?.street ?? ''}
+              onChange={(e) => setAddress('street', e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            City
+            <input
+              value={form.address?.city ?? ''}
+              onChange={(e) => setAddress('city', e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            State
+            <input
+              value={form.address?.state ?? ''}
+              onChange={(e) => setAddress('state', e.target.value)}
+              required
+              maxLength={2}
+            />
+          </label>
+          <label>
+            Zipcode
+            <input
+              value={form.address?.zipcode ?? ''}
+              onChange={(e) => setAddress('zipcode', e.target.value)}
+              required
+            />
+          </label>
+        </div>
         <div className={styles.formButtons}>
           <button type="submit" className={styles.button}>
             {editingId === null ? 'Add' : 'Update'}
