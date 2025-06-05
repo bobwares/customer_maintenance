@@ -9,7 +9,7 @@
     "address": {
       "street": "123 Main Street",
       "city": "Anytown",
-      "state": "CA",
+      "state": "California",
       "zipcode": "12345"
     }
   },
@@ -23,7 +23,7 @@
     "address": {
       "street": "456 Elm Street",
       "city": "Los Angeles",
-      "state": "CA",
+      "state": "California",
       "zipcode": "56789"
     }
   },
@@ -37,7 +37,7 @@
     "address": {
       "street": "789 Oak Street",
       "city": "San Francisco",
-      "state": "CA",
+      "state": "California",
       "zipcode": "90123"
     }
   },
@@ -51,7 +51,7 @@
     "address": {
       "street": "101 Pine Street",
       "city": "San Diego",
-      "state": "CA",
+      "state": "California",
       "zipcode": "10101"
     }
   },
@@ -65,7 +65,7 @@
     "address": {
       "street": "1234 Main Street",
       "city": "Fremont",
-      "state": "CA",
+      "state": "California",
       "zipcode": "94538"
     }
   },
@@ -79,7 +79,7 @@
     "address": {
       "street": "456 Elm Street",
       "city": "Oakland",
-      "state": "CA",
+      "state": "California",
       "zipcode": "94607"
     }
   },
@@ -93,7 +93,7 @@
     "address": {
       "street": "789 Oak Street",
       "city": "Berkeley",
-      "state": "CA",
+      "state": "California",
       "zipcode": "94704"
     }
   },
@@ -107,7 +107,7 @@
     "address": {
       "street": "101 Pine Street",
       "city": "San Jose",
-      "state": "CA",
+      "state": "California",
       "zipcode": "95113"
     }
   },
@@ -121,7 +121,7 @@
     "address": {
       "street": "1234 Main Street",
       "city": "Santa Cruz",
-      "state": "CA",
+      "state": "California",
       "zipcode": "95060"
     }
   }

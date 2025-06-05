@@ -1,4 +1,10 @@
 # Version History
+## 2.0.43 - 2025-06-05
+- Display full state names in dropdown and table.
+- Allow 10-character zip codes and place state and zip on one row.
+- Adjust dropdown width for longest state name.
+- Updated validation schema for new formats.
+
 ## 2.0.42 - 2025-06-05
 - Added dropdown list of US states on customer form.
 - Limited text input fields to 30 characters and zipcode to 5.
