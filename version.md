@@ -1,4 +1,8 @@
 # Version History
+## 2.0.48 - 2025-06-05
+- Expanded customer table to fill available page space.
+- Ensured scrolling rows disappear behind sticky header.
+
 ## 2.0.47 - 2025-06-05
 - Renamed first column header to "Name".
 - Made table header sticky when scrolling.
