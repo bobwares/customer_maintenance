@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-app
 // File: src/app/customers/page.tsx
-// Version: 2.0.43
+// Version: 2.0.45
 // Author: Bobwares
-// Date: 2025-06-05 07:09:10 UTC
+// Date: 2025-06-05 07:21:35 UTC
 // Description: Customer maintenance page using customer-api backend.
 //
 "use client";
@@ -92,6 +92,10 @@ export default function CustomersPage() {
     address: { street: '', city: '', state: '', zipcode: '' },
   });
   const [editingId, setEditingId] = useState<number | null>(null);
+  const [sortConfig, setSortConfig] = useState<{ key: string; direction: 'asc' | 'desc' }>({
+    key: 'last',
+    direction: 'asc',
+  });
 
   const loadCustomers = async () => {
     const res = await fetch(API_URL);
@@ -156,6 +160,48 @@ export default function CustomersPage() {
       address: { ...(prev.address || { street: '', city: '', state: '', zipcode: '' }), [key]: value },
     }));
   };
+
+  const handleSort = (key: string) => {
+    setSortConfig((prev) => {
+      if (prev.key === key) {
+        return { key, direction: prev.direction === 'asc' ? 'desc' : 'asc' };
+      }
+      return { key, direction: 'asc' };
+    });
+  };
+
+  const sortedCustomers = [...customers].sort((a, b) => {
+    const getValue = (c: Customer) => {
+      switch (sortConfig.key) {
+        case 'last':
+          return c.last;
+        case 'first':
+          return c.first;
+        case 'email':
+          return c.email;
+        case 'age':
+          return c.age;
+        case 'street':
+          return c.address?.street ?? '';
+        case 'city':
+          return c.address?.city ?? '';
+        case 'state':
+          return c.address?.state ?? '';
+        case 'zipcode':
+          return c.address?.zipcode ?? '';
+        default:
+          return '';
+      }
+    };
+    const valA = getValue(a);
+    const valB = getValue(b);
+    if (typeof valA === 'number' && typeof valB === 'number') {
+      return sortConfig.direction === 'asc' ? valA - valB : valB - valA;
+    }
+    return sortConfig.direction === 'asc'
+      ? String(valA).localeCompare(String(valB))
+      : String(valB).localeCompare(String(valA));
+  });
 
   return (
     <div className={styles.container}>
@@ -267,22 +313,20 @@ export default function CustomersPage() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>First</th>
-              <th>Last</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Street</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zipcode</th>
+              <th onClick={() => handleSort('last')}>Last, First</th>
+              <th onClick={() => handleSort('email')}>Email</th>
+              <th onClick={() => handleSort('age')}>Age</th>
+              <th onClick={() => handleSort('street')}>Street</th>
+              <th onClick={() => handleSort('city')}>City</th>
+              <th onClick={() => handleSort('state')}>State</th>
+              <th onClick={() => handleSort('zipcode')}>Zipcode</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {customers.map((c) => (
+            {sortedCustomers.map((c) => (
               <tr key={c.id}>
-                <td>{c.first}</td>
-                <td>{c.last}</td>
+                <td>{`${c.last}, ${c.first}`}</td>
                 <td>{c.email}</td>
                 <td>{c.age}</td>
                 <td>{c.address?.street}</td>

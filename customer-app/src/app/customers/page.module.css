@@ -2,9 +2,9 @@
 # App: Customer CRUD Application
 # Package: customer-app
 # File: src/app/customers/page.module.css
-# Version: 2.0.43
+# Version: 2.0.45
 # Author: Bobwares
-# Date: 2025-06-05 07:09:36 UTC
+# Date: 2025-06-05 07:21:35 UTC
 # Description: CSS styles for the customer maintenance page.
 #
 */
@@ -90,6 +90,8 @@
   background-color: #ffffff;
   border: 1px solid #ccc;
   padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .table {
@@ -101,4 +103,8 @@
 .table td {
   border: 1px solid #ccc;
   padding: 0.5rem;
+}
+
+.table th {
+  cursor: pointer;
 }
