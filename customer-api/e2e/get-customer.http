@@ -1,9 +1,9 @@
 # App: Customer CRUD Application
 # Package: customer-api
 # File: e2e/get-customer.http
-# Version: 2.0.36
+# Version: 2.0.37
 # Author: Bobwares
-# Date: 2025-06-05 01:49:22 UTC
+# Date: 2025-06-05 02:43:30 UTC
 # Description: E2E test for retrieving a single customer.
 #
 GET http://localhost:3001/customers/1

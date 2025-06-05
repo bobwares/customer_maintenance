@@ -1,21 +1,20 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/dto/create-customer.dto.ts
-// Version: 2.0.36
+// Version: 2.0.37
 // Author: Bobwares
-// Date: 2025-06-05 01:48:04 UTC
+// Date: 2025-06-05 02:43:30 UTC
 // Description: DTO for creating a customer.
 //
 import {
   IsInt,
   IsString,
   IsEmail,
-  Length,
-  Matches,
   Min,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
+import { AddressDto } from './address.dto';
 
 export class CreateCustomerDto {
   @IsString()
@@ -34,20 +33,4 @@ export class CreateCustomerDto {
   @ValidateNested()
   @Type(() => AddressDto)
   address!: AddressDto;
-}
-
-class AddressDto {
-  @IsString()
-  street!: string;
-
-  @IsString()
-  city!: string;
-
-  @IsString()
-  @Length(2, 2)
-  state!: string;
-
-  @IsString()
-  @Matches(/^\d{5}$/)
-  zipcode!: string;
 }

@@ -1,9 +1,9 @@
 # App: Customer CRUD Application
 # Package: customer-api
 # File: e2e/create-customer.http
-# Version: 2.0.36
+# Version: 2.0.37
 # Author: Bobwares
-# Date: 2025-06-05 01:48:55 UTC
+# Date: 2025-06-05 02:43:30 UTC
 # Description: E2E test for creating a customer.
 #
 POST http://localhost:3001/customers

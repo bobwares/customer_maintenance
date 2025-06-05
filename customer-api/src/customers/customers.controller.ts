@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.controller.ts
-// Version: 2.0.36
+// Version: 2.0.37
 // Author: Bobwares
-// Date: 2025-06-05 01:48:32 UTC
+// Date: 2025-06-05 02:43:30 UTC
 // Description: HTTP controller for customer routes.
 //
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
