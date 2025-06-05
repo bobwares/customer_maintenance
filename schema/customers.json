@@ -1,0 +1,101 @@
+[
+  {
+    "first": "John",
+    "last": "Doe",
+    "age": 30,
+    "address": {
+      "street": "123 Main Street",
+      "city": "Anytown",
+      "state": "CA",
+      "zipcode": "12345"
+    }
+  },
+  {
+    "first": "Jane",
+    "last": "Smith",
+    "age": 25,
+    "address": {
+      "street": "456 Elm Street",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipcode": "56789"
+    }
+  },
+  {
+    "first": "Mary",
+    "last": "Williams",
+    "age": 40,
+    "address": {
+      "street": "789 Oak Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "90123"
+    }
+  },
+  {
+    "first": "Peter",
+    "last": "Jones",
+    "age": 35,
+    "address": {
+      "street": "101 Pine Street",
+      "city": "San Diego",
+      "state": "CA",
+      "zipcode": "10101"
+    }
+  },
+  {
+    "first": "Susan",
+    "last": "Brown",
+    "age": 20,
+    "address": {
+      "street": "1234 Main Street",
+      "city": "Fremont",
+      "state": "CA",
+      "zipcode": "94538"
+    }
+  },
+  {
+    "first": "David",
+    "last": "Green",
+    "age": 50,
+    "address": {
+      "street": "456 Elm Street",
+      "city": "Oakland",
+      "state": "CA",
+      "zipcode": "94607"
+    }
+  },
+  {
+    "first": "Elizabeth",
+    "last": "White",
+    "age": 60,
+    "address": {
+      "street": "789 Oak Street",
+      "city": "Berkeley",
+      "state": "CA",
+      "zipcode": "94704"
+    }
+  },
+  {
+    "first": "Michael",
+    "last": "Black",
+    "age": 70,
+    "address": {
+      "street": "101 Pine Street",
+      "city": "San Jose",
+      "state": "CA",
+      "zipcode": "95113"
+    }
+  },
+  {
+    "first": "Sarah",
+    "last": "Blue",
+    "age": 80,
+    "address": {
+      "street": "1234 Main Street",
+      "city": "Santa Cruz",
+      "state": "CA",
+      "zipcode": "95060"
+    }
+  }
+]

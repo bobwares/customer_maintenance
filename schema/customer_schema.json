@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customer",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["first", "last", "age", "address"],
+    "properties": {
+      "first": {
+        "type": "string"
+      },
+      "last": {
+        "type": "string"
+      },
+      "age": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "address": {
+        "type": "object",
+        "required": ["street", "city", "state", "zipcode"],
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^\\d{5}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  }
+}
