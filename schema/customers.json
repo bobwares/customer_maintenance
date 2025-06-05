@@ -3,6 +3,9 @@
     "first": "John",
     "last": "Doe",
     "age": 30,
+    "email": "john.doe@example.com",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z",
     "address": {
       "street": "123 Main Street",
       "city": "Anytown",
@@ -14,6 +17,9 @@
     "first": "Jane",
     "last": "Smith",
     "age": 25,
+    "email": "jane.smith@example.com",
+    "createdAt": "2024-01-02T00:00:00Z",
+    "updatedAt": "2024-01-02T00:00:00Z",
     "address": {
       "street": "456 Elm Street",
       "city": "Los Angeles",
@@ -25,6 +31,9 @@
     "first": "Mary",
     "last": "Williams",
     "age": 40,
+    "email": "mary.williams@example.com",
+    "createdAt": "2024-01-03T00:00:00Z",
+    "updatedAt": "2024-01-03T00:00:00Z",
     "address": {
       "street": "789 Oak Street",
       "city": "San Francisco",
@@ -36,6 +45,9 @@
     "first": "Peter",
     "last": "Jones",
     "age": 35,
+    "email": "peter.jones@example.com",
+    "createdAt": "2024-01-04T00:00:00Z",
+    "updatedAt": "2024-01-04T00:00:00Z",
     "address": {
       "street": "101 Pine Street",
       "city": "San Diego",
@@ -47,6 +59,9 @@
     "first": "Susan",
     "last": "Brown",
     "age": 20,
+    "email": "susan.brown@example.com",
+    "createdAt": "2024-01-05T00:00:00Z",
+    "updatedAt": "2024-01-05T00:00:00Z",
     "address": {
       "street": "1234 Main Street",
       "city": "Fremont",
@@ -58,6 +73,9 @@
     "first": "David",
     "last": "Green",
     "age": 50,
+    "email": "david.green@example.com",
+    "createdAt": "2024-01-06T00:00:00Z",
+    "updatedAt": "2024-01-06T00:00:00Z",
     "address": {
       "street": "456 Elm Street",
       "city": "Oakland",
@@ -69,6 +87,9 @@
     "first": "Elizabeth",
     "last": "White",
     "age": 60,
+    "email": "elizabeth.white@example.com",
+    "createdAt": "2024-01-07T00:00:00Z",
+    "updatedAt": "2024-01-07T00:00:00Z",
     "address": {
       "street": "789 Oak Street",
       "city": "Berkeley",
@@ -80,6 +101,9 @@
     "first": "Michael",
     "last": "Black",
     "age": 70,
+    "email": "michael.black@example.com",
+    "createdAt": "2024-01-08T00:00:00Z",
+    "updatedAt": "2024-01-08T00:00:00Z",
     "address": {
       "street": "101 Pine Street",
       "city": "San Jose",
@@ -91,6 +115,9 @@
     "first": "Sarah",
     "last": "Blue",
     "age": 80,
+    "email": "sarah.blue@example.com",
+    "createdAt": "2024-01-09T00:00:00Z",
+    "updatedAt": "2024-01-09T00:00:00Z",
     "address": {
       "street": "1234 Main Street",
       "city": "Santa Cruz",

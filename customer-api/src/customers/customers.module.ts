@@ -1,9 +1,9 @@
 // App: Customer CRUD Application
 // Package: customer-api
 // File: src/customers/customers.module.ts
-// Version: 2.0.35
+// Version: 2.0.36
 // Author: Bobwares
-// Date: 2025-06-05 01:24:07 UTC
+// Date: 2025-06-05 01:48:38 UTC
 // Description: Module defining the customers feature.
 //
 import { Module } from '@nestjs/common';
